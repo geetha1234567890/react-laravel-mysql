@@ -4,7 +4,8 @@ services:
   laravel-app:
     build:
       context: ./laravel-app
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-ngnix       # Select to run on Ngnix Webserver
+#      dockerfile: Dockerfile-apache      # Select to run on Apache Webserver
     ports:
       - "8080:80"
     environment:
@@ -17,7 +18,8 @@ services:
       - DB_USERNAME=sarasai_lms
       - DB_PASSWORD=eqnz%ykp66R@E6F
     volumes:
-      - ./laravel-app:/var/www/html
+      - ./laravel-app:/var/www                   # Select to run on Ngnix Webserver
+#      - ./laravel-app:/var/www/html              # Select to run on Apache Webserver
     restart: always
     depends_on:
       db:
