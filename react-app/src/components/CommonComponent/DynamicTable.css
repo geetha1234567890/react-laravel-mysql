@@ -1,0 +1,126 @@
+.tableContainer {
+    /* width: 90%; */
+    /* max-width: 1200px; */
+    margin: auto;
+    margin-top: 20px;
+    text-align: left;
+    font-family: "Nunito Sans", sans-serif;
+    border-radius: 10px; /* Add border radius to the table container */
+    overflow: hidden; /* Ensure the border radius applies to the entire table */
+  }
+
+
+  h2 {
+    text-align: center;
+    /* margin-bottom: 20px; */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    /* border:1px solid #000 ; */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .tableHead {
+    background-color: #FFFF;
+    position: relative; /* Ensure the pseudo-element is positioned relative to .tableHead */
+  }
+  
+  .tableHead::after {
+    content: "";
+    position: absolute;
+    
+    left: 30px; /* Space from the left */
+    right: 30px; /* Space from the right */
+    bottom: 0;
+    height: 2px; /* Height of the border */
+    background-color: #C2C2E7; /* Color of the border */
+  }  
+
+ 
+  
+  .tableHead th {
+    padding: 12px; /* Apply padding to table headers */
+    font-family: "Medium";
+    letter-spacing: 0.8px;
+  }
+  
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+    
+  }
+  
+  .tableBody #tableRow {
+    background-color: #ffffff;
+  }
+  
+  .tableBody #tableRow:hover {
+    background-color: #f9f9f9; /* Optional: Add a hover effect for rows */
+  }
+  
+  td {
+    /* border-bottom: 1px solid #C2C2E7; */
+    /* border-bottom-width: 90%; */
+    padding: 10px;
+    font-family: "Light";
+    letter-spacing: 0.8px;
+    font-size: 16px;
+  }
+ 
+  
+  .custom-button {
+    border-radius: 20px; /* Custom border radius for buttons */
+    border: 1px solid #ff6f61;
+    color: #ff6f61;
+  }
+  
+  .custom-button:hover {
+    background-color: #ff6f61;
+    color: #fff;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pagination button.active {
+    background-color: #ff6f61;
+    color: #fff;
+  }
+  
+  .pagination button:hover {
+    background-color: #ddd;
+  }
+  
+  .pagination button:disabled {
+    cursor: not-allowed;
+    background-color: #f2f2f2;
+  }
+  
+  .custom-.tableBody #tableRow:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+  }
+  
+  .custom-.tableBody #tableRow:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+  }
+  

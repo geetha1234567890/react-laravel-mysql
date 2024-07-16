@@ -1,0 +1,25 @@
+.custom-view-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #FF5722; /* Orange text color */
+    background-color: #FFFFFF; /* White background */
+    border: 1px solid #FF5722; /* Orange border */
+    border-radius: 20px;
+    text-transform: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-view-button:hover {
+    background-color: #FF5722; /* Orange background on hover */
+    color: #FFFFFF; /* White text color on hover */
+}
+
+.custom-view-button svg {
+    margin-left: 0.5rem;
+    fill: currentColor; /* Make sure the SVG icon inherits the text color */
+}

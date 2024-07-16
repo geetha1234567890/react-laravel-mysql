@@ -1,0 +1,11 @@
+{
+    "name": "SarasAI",
+    "alias": "sarasai",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\SarasAI\\Providers\\SarasAIServiceProvider"
+    ],
+    "files": []
+}

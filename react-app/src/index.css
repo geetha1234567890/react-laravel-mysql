@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Regular";
+  src: url("./assets/fonts/Nohemi-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: url("./assets/fonts/Nohemi-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Light";
+  src: url("./assets/fonts/Nohemi-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ExtraLight";
+  src: url("./assets/fonts/Nohemi-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("./assets/fonts/Nohemi-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SemiBold";
+  src: url("./assets/fonts/Nohemi-SemiBold.ttf") format("truetype");
+}
+
+
+
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #f1f1fb;
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* track */
+
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scroll:hover {
+  background: #555;
+}

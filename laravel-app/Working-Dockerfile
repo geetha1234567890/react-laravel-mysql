@@ -1,0 +1,42 @@
+# Stage 1: Build frontend assets with Vite
+FROM node:18 AS frontend-builder
+WORKDIR /app
+
+# Copy frontend dependencies and build frontend assets
+COPY package*.json yarn.lock ./
+#RUN npm install
+RUN yarn install
+COPY . .
+#RUN npm run build
+RUN yarn build
+
+# Stage 2: Build Laravel backend with Apache
+FROM php:8.2-apache
+
+# Enable Apache modules and set document root
+RUN a2enmod rewrite
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Copy Laravel application files to Apache document root
+COPY . /var/www/html
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Stage 3: Combine frontend assets into Laravel public directory
+COPY --from=frontend-builder /app/public/build /var/www/html/public
+
+# Update Apache default site configuration
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
+
+# Expose port 80 and start Apache
+EXPOSE 80
+CMD ["apache2-foreground"]
+
+COPY start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/usr/local/bin/start.sh"]

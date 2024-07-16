@@ -1,0 +1,8 @@
+{
+    "Student": true,
+    "Admin": true,
+    "TA": true,
+    "SarasAI": true,
+    "AuthService": true,
+    "Coach": true
+}

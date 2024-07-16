@@ -1,0 +1,11 @@
+{
+    "name": "TA",
+    "alias": "ta",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TA\\Providers\\TAServiceProvider"
+    ],
+    "files": []
+}

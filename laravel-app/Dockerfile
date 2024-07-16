@@ -1,0 +1,27 @@
+# Build Laravel backend with Apache
+FROM php:8.2-apache
+
+# Enable Apache modules and set document root
+RUN a2enmod rewrite
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Copy Laravel application files to Apache document root
+COPY . /var/www/html
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Update Apache default site configuration
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
+
+# Expose port 80 and start Apache
+EXPOSE 80
+CMD ["apache2-foreground"]
+
+COPY start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/usr/local/bin/start.sh"]

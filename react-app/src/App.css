@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+/* calender imports */
+
+
+
+/* Hide the spinner (arrows) for input type number in Chrome, Safari, Edge, and Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide the spinner (arrows) for input type number in Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+
+::root {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #F1F1FB;
+    font-family: "Nunito Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow-y: hidden; */
+}
+
+.dropdown-menu{
+    border-radius: 4px;
+    padding: 10px 0;
+    -webkit-animation-name: dropdown-animate;
+    animation-name: dropdown-animate;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    border: 0;
+    box-shadow: 0 5px 30px 0 rgba(82, 63 ,105, 0.2);
+}
+
+.dropdown-menu .dropdown-header,
+.dropdown-menu .dropdown-footer{
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 25px;
+}
+
+.dropdown-menu .dropdown-footer a{
+    color: #444444;
+    text-decoration: underline;
+}
+
+.dropdown-menu .dropdown-footer a:hover{
+    text-decoration: none;
+}
+
+.dropdown-header .dropdown-divider{
+    color: #a5c5fe;
+    margin: 0;
+}
+
+.dropdown-menu .dropdown-item{
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.dropdown-menu .dropdown-item i{
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 0;
+}
+
+.dropdown-menu .dropdown-item:hover{
+    background-color: #f6f6ff;
+}
+
+@media (min-width:768px){
+    .dropdown-menu-arrow::before{
+        content: '';
+        width: 13px;
+        height: 13px;
+        background: #FFF;
+        position: absolute;
+        top: -7px;
+        right: 20px;
+        transform: rotate(45deg);
+        border-top: 1px solid #eaedf1;
+        border-left: 1px solid #eaedf1;
+    }
+}
+
+@-webkit-keyframes dropdown-animate {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+}
+
+@keyframes dropdown-animate{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+}

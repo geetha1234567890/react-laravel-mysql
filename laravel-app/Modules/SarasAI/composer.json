@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/sarasai",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\SarasAI\\": "app/",
+            "Modules\\SarasAI\\Database\\Factories\\": "database/factories/",
+            "Modules\\SarasAI\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\SarasAI\\Tests\\": "tests/"
+        }
+    }
+}
